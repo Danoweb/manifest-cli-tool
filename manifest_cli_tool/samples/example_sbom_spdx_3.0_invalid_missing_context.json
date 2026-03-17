@@ -1,0 +1,16 @@
+{
+  "@graph": [
+    {
+      "type": "SpdxDocument",
+      "spdxId": "urn:spdx:document:invalid-doc",
+      "name": "invalid SPDX 3 document",
+      "dataLicense": "CC0-1.0",
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": []
+      }
+    }
+  ]
+}

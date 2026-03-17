@@ -1,0 +1,216 @@
+{
+  "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "@graph": [
+    {
+      "type": "Person",
+      "spdxId": "urn:spdx:person:dan-test",
+      "name": "Dan Test Author",
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Tool",
+      "spdxId": "urn:spdx:tool:sbom-fixture-gen",
+      "name": "SBOM Fixture Generator",
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Package",
+      "spdxId": "urn:spdx:package:demo-app-1.0.0",
+      "name": "demo-app",
+      "packageVersion": "1.0.0",
+      "packageUrl": "pkg:generic/acme/demo-app@1.0.0",
+      "downloadLocation": "https://example.com/demo-app-1.0.0.tar.gz",
+      "primaryPurpose": "application",
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ],
+        "createdUsing": [
+          {
+            "spdxId": "urn:spdx:tool:sbom-fixture-gen"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Package",
+      "spdxId": "urn:spdx:package:lodash-4.17.21",
+      "name": "lodash",
+      "packageVersion": "4.17.21",
+      "packageUrl": "pkg:npm/lodash@4.17.21",
+      "downloadLocation": "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz",
+      "primaryPurpose": "library",
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Package",
+      "spdxId": "urn:spdx:package:requests-2.32.3",
+      "name": "requests",
+      "packageVersion": "2.32.3",
+      "packageUrl": "pkg:pypi/requests@2.32.3",
+      "downloadLocation": "https://pypi.org/project/requests/2.32.3/",
+      "primaryPurpose": "library",
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:spdx:relationship:demo-app-depends-lodash",
+      "from": {
+        "spdxId": "urn:spdx:package:demo-app-1.0.0"
+      },
+      "relationshipType": "dependsOn",
+      "to": [
+        {
+          "spdxId": "urn:spdx:package:lodash-4.17.21"
+        }
+      ],
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "urn:spdx:relationship:demo-app-depends-requests",
+      "from": {
+        "spdxId": "urn:spdx:package:demo-app-1.0.0"
+      },
+      "relationshipType": "dependsOn",
+      "to": [
+        {
+          "spdxId": "urn:spdx:package:requests-2.32.3"
+        }
+      ],
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Sbom",
+      "spdxId": "urn:spdx:sbom:demo-app",
+      "name": "demo-app SBOM",
+      "rootElement": [
+        {
+          "spdxId": "urn:spdx:package:demo-app-1.0.0"
+        }
+      ],
+      "element": [
+        {
+          "spdxId": "urn:spdx:package:demo-app-1.0.0"
+        },
+        {
+          "spdxId": "urn:spdx:package:lodash-4.17.21"
+        },
+        {
+          "spdxId": "urn:spdx:package:requests-2.32.3"
+        },
+        {
+          "spdxId": "urn:spdx:relationship:demo-app-depends-lodash"
+        },
+        {
+          "spdxId": "urn:spdx:relationship:demo-app-depends-requests"
+        }
+      ],
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ],
+        "createdUsing": [
+          {
+            "spdxId": "urn:spdx:tool:sbom-fixture-gen"
+          }
+        ]
+      }
+    },
+    {
+      "type": "SpdxDocument",
+      "spdxId": "urn:spdx:document:demo-app-sbom-doc",
+      "name": "demo-app SPDX 3 document",
+      "dataLicense": "CC0-1.0",
+      "rootElement": [
+        {
+          "spdxId": "urn:spdx:sbom:demo-app"
+        }
+      ],
+      "element": [
+        {
+          "spdxId": "urn:spdx:sbom:demo-app"
+        }
+      ],
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ],
+        "createdUsing": [
+          {
+            "spdxId": "urn:spdx:tool:sbom-fixture-gen"
+          }
+        ]
+      }
+    }
+  ]
+}

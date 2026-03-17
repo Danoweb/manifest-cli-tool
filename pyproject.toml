@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "manifest-cli-tool"
+version = "0.1.0"
+description = "CLI tool for ingesting software bill of materials into OpenSearch"
+authors = []
+packages = [{ include = "manifest_cli_tool" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+opensearch-py = "^2.4.0"
+click = "^8.1"
+
+[tool.poetry.scripts]
+sbom-cli = "manifest_cli_tool.main:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

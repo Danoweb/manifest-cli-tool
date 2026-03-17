@@ -1,0 +1,90 @@
+{
+  "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "@graph": [
+    {
+      "type": "Person",
+      "spdxId": "urn:spdx:person:dan-test",
+      "name": "Dan Test Author",
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Package",
+      "spdxId": "urn:spdx:package:demo-app-1.0.0",
+      "name": "demo-app",
+      "packageVersion": "1.0.0",
+      "packageUrl": "pkg:generic/acme/demo-app@1.0.0",
+      "downloadLocation": "https://example.com/demo-app-1.0.0.tar.gz",
+      "primaryPurpose": "application",
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Sbom",
+      "spdxId": "urn:spdx:sbom:demo-app",
+      "name": "demo-app SBOM",
+      "rootElement": [
+        {
+          "spdxId": "urn:spdx:package:demo-app-1.0.0"
+        }
+      ],
+      "element": [
+        {
+          "spdxId": "urn:spdx:package:demo-app-1.0.0"
+        }
+      ],
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ]
+      }
+    },
+    {
+      "type": "SpdxDocument",
+      "spdxId": "urn:spdx:document:demo-app-sbom-doc",
+      "name": "demo-app SPDX 3 document",
+      "dataLicense": "CC0-1.0",
+      "rootElement": [
+        {
+          "spdxId": "urn:spdx:sbom:demo-app"
+        }
+      ],
+      "element": [
+        {
+          "spdxId": "urn:spdx:sbom:demo-app"
+        }
+      ],
+      "creationInfo": {
+        "type": "CreationInfo",
+        "specVersion": "3.0.1",
+        "created": "2026-03-17T12:00:00Z",
+        "createdBy": [
+          {
+            "spdxId": "urn:spdx:person:dan-test"
+          }
+        ]
+      }
+    }
+  ]
+}

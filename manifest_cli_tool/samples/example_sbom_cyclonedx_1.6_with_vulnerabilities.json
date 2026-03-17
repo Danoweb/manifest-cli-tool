@@ -1,0 +1,60 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:7e2f1d49-6bd4-43c5-8f34-0a64a68f5555",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-03-17T12:05:00Z",
+    "component": {
+      "bom-ref": "pkg:generic/acme/demo-app@1.0.0",
+      "type": "application",
+      "name": "demo-app",
+      "version": "1.0.0",
+      "purl": "pkg:generic/acme/demo-app@1.0.0"
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "pkg:npm/lodash@4.17.20",
+      "type": "library",
+      "name": "lodash",
+      "version": "4.17.20",
+      "purl": "pkg:npm/lodash@4.17.20"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:generic/acme/demo-app@1.0.0",
+      "dependsOn": [
+        "pkg:npm/lodash@4.17.20"
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln-1",
+      "id": "CVE-2021-23337",
+      "source": {
+        "name": "NVD"
+      },
+      "ratings": [
+        {
+          "severity": "high",
+          "method": "CVSSv31",
+          "score": 7.2,
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        }
+      ],
+      "affects": [
+        {
+          "ref": "pkg:npm/lodash@4.17.20"
+        }
+      ],
+      "analysis": {
+        "state": "exploitable"
+      },
+      "description": "Example vulnerability record for parser testing."
+    }
+  ]
+}

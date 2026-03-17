@@ -1,0 +1,82 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:6d6c7f4a-8d7c-4e5a-9e5b-2d9f5b7e4c11",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-03-17T12:00:00Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "Example SBOM Generator",
+          "version": "1.0.0"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "pkg:generic/acme/demo-app@1.0.0",
+      "type": "application",
+      "name": "demo-app",
+      "version": "1.0.0",
+      "supplier": {
+        "name": "Acme Corp"
+      },
+      "purl": "pkg:generic/acme/demo-app@1.0.0"
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "pkg:npm/lodash@4.17.21",
+      "type": "library",
+      "name": "lodash",
+      "version": "4.17.21",
+      "purl": "pkg:npm/lodash@4.17.21",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:pypi/requests@2.32.3",
+      "type": "library",
+      "name": "requests",
+      "version": "2.32.3",
+      "purl": "pkg:pypi/requests@2.32.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:generic/acme/demo-app@1.0.0",
+      "dependsOn": [
+        "pkg:npm/lodash@4.17.21",
+        "pkg:pypi/requests@2.32.3"
+      ]
+    },
+    {
+      "ref": "pkg:npm/lodash@4.17.21",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/requests@2.32.3",
+      "dependsOn": []
+    }
+  ]
+}
